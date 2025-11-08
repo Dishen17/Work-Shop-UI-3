@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Circuitech Dashboard</title>
+
   <style>
     body {
       margin: 0;
@@ -16,38 +17,12 @@
       padding: 1.5rem;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
     h1 {
       margin: 0;
       color: #0284c7;
       font-size: 1.8rem;
-    }
-
-    .username {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-top: 0.5rem;
-      color: #0f172a;
-    }
-
-    .logout-btn {
-      margin-top: 1rem;
-      background-color: #ef4444;
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: background 0.2s;
-    }
-
-    .logout-btn:hover {
-      background-color: #dc2626;
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
     .charts {
@@ -55,7 +30,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     .chart-card {
@@ -69,76 +44,86 @@
     .chart-card p {
       font-weight: 600;
       color: #0284c7;
-      margin: 0.5rem 0 0 0;
+      margin-top: 0.5rem;
     }
 
     iframe {
-      border: 1px solid #d1d5db;
       border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="header">
-    <h1>Circuitech Dashboard</h1>
-    <div class="username" id="profileName"></div>
-    <button class="logout-btn" onclick="logout()">Logout</button>
-  </div>
+  <h1>Circuitech Dashboard</h1>
 
   <div class="charts">
+
+    <!-- Ultrasonic -->
     <div class="chart-card">
-      <iframe width="450" height="260" src="https://thingspeak.com/channels/3130605/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
       <p>Ultrasonic</p>
     </div>
 
+    <!-- DHT11 -->
     <div class="chart-card">
-      <iframe width="450" height="260" src="https://thingspeak.com/channels/3130605/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
       <p>DHT11</p>
     </div>
 
+    <!-- Load Cell -->
     <div class="chart-card">
-      <iframe width="450" height="260" src="https://thingspeak.com/channels/3130605/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
       <p>Load Cell</p>
     </div>
 
+    <!-- MPU6050 X -->
     <div class="chart-card">
-      <iframe width="450" height="260" src="https://thingspeak.com/channels/3130605/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
       <p>MPU6050 X-Axis</p>
     </div>
 
+    <!-- MPU6050 Y -->
     <div class="chart-card">
-      <iframe width="450" height="260" src="https://thingspeak.com/channels/3130605/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
       <p>MPU6050 Y-Axis</p>
     </div>
 
+    <!-- MPU6050 Z -->
     <div class="chart-card">
-      <iframe width="450" height="260" src="https://thingspeak.com/channels/3130605/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
       <p>MPU6050 Z-Axis</p>
     </div>
 
+    <!-- MPU6050 Gyro Combined -->
     <div class="chart-card">
-      <iframe width="450" height="260" src="https://thingspeak.com/channels/3130605/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
       <p>MPU6050 Gyro Combined</p>
     </div>
+
+    <!-- MAX30102 Heart Rate -->
+    <div class="chart-card">
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&timescale=10&type=line&title=MAX30102+Heart&update=15&yaxismax=100&yaxismin=-100"></iframe>
+      <p>MAX30102 Heart Rate</p>
+    </div>
+
+    <!-- MAX30102 SpO2 -->
+    <div class="chart-card">
+      <iframe width="450" height="260"
+        src="https://thingspeak.com/channels/3130605/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&title=MAX30102+SpO2&update=15&yaxismax=100&yaxismin=-100"></iframe>
+      <p>MAX30102 SpO2</p>
+    </div>
+
   </div>
-
-  <script>
-    // Restrict access if not logged in
-    if (localStorage.getItem("isLoggedIn") !== "true") {
-      window.location.href = "index.html";
-    }
-
-    // Show username
-    const username = "circuitechgroup21";
-    document.getElementById("profileName").textContent = "Logged in as: " + username;
-
-    // Logout
-    function logout() {
-      localStorage.removeItem("isLoggedIn");
-      window.location.href = "index.html";
-    }
-  </script>
 
 </body>
 </html>
